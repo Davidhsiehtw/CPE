@@ -3,4 +3,5 @@ a.out
 *.dSYM
 .DS_Store
 bits/
+.vscode/
 
