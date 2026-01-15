@@ -1,3 +1,4 @@
+// https://kai-y.medium.com/uva-10221-satellites-ad20954210d7
 #include <bits/stdc++.h>
 using namespace std;
 #define DEG2RAD(theta) ((theta) * M_PI / 180.0)
