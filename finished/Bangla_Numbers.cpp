@@ -1,6 +1,57 @@
 // 更好的解法: https://yuihuang.com/zj-a741/
 // 細節說明: https://czone6.notion.site/10101-Bangla-Numbers-39f8436d81cf49b6ba5d0e2c4a32a467
 // 太多 branch 效能很爛
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int Bangla[4] = {10000000, 100000, 1000, 100};
+string s[4] = {"kuti", "lakh", "
+        solve(n / Bangla[0]);hajar", "shata"};
+string ans;
+#define ll long long
+
+void solve(ll n) {
+	if (n > Bangla[0]) {
+        ans += " " + s[0];
+        n %= Bangla[0];
+	}
+	
+	for (int i = 0; i < 4; i++) {
+		if (n >= Bangla[i]) { 
+			ans += " " + to_string(n / Bangla[i]) + " " + s[i];
+		}
+		n %= Bangla[i];
+	}
+	if (n > 0)
+		ans += " " + to_string(n);
+}
+
+int main() {
+	ll n;
+	int Case = 1;
+	while (cin >> n) {
+		// 注意雞巴格式
+		if (Case < 10) cout << "   " << Case++ << "."; 
+		else cout << "  " << Case++ << ".";
+		
+		if (n == 0) {
+			cout << " 0\n";
+			continue; // 注意記得 continue
+		}
+		solve(n);
+		cout << ans << "\n";
+		ans = "";
+	}
+}
+
+
+
+
+
+
+
+// Bad Formating。會 RE
 #include <iostream>
 using namespace std;
 
@@ -93,4 +144,34 @@ some test case:
 Sample Output
 1. 23 hajar 7 shata 64
 2. 45 lakh 89 hajar 7 shata 45 kuti 89 lakh 73 hajar 9 shata 58
+*/
+
+/*
+錯誤格式
+   1. 23 hajar 7 shata 64↵\r\n
+   2. 45 lakh 89 hajar 7 shata 45 kuti 89 lakh 73 hajar 9 shata 58↵\r\n
+   3. 0↵\r\n
+   4. 9 kuti 99 lakh 99 hajar 9 shata 99 kuti 99 lakh 99 hajar 9 shata 99↵\r\n
+   5. 45 lakh 89 hajar 7 shata kuti 89 lakh 73 hajar 9 shata 58↵\r\n
+   6. 1 kuti↵\r\n
+   7. 1 shata kuti↵\r\n
+   8. 15 hajar 3 shata 36↵\r\n
+   9. 6 shata 49↵\r\n
+   10. 20 hajar 7 shata 2↵\r\n
+   11. 30 hajar 8 shata 77↵\r\n
+   12. 15 hajar 4 shata 21↵\r\n
+
+正確格式
+   1. 23 hajar 7 shata 64↵\r\n
+   2. 45 lakh 89 hajar 7 shata 45 kuti 89 lakh 73 hajar 9 shata 58↵\r\n
+   3. 0↵\r\n
+   4. 9 kuti 99 lakh 99 hajar 9 shata 99 kuti 99 lakh 99 hajar 9 shata 99↵\r\n
+   5. 45 lakh 89 hajar 7 shata kuti 89 lakh 73 hajar 9 shata 58↵\r\n
+   6. 1 kuti↵\r\n
+   7. 1 shata kuti↵\r\n
+   8. 15 hajar 3 shata 36↵\r\n
+   9. 6 shata 49↵\r\n
+  10. 20 hajar 7 shata 2↵\r\n
+  11. 30 hajar 8 shata 77↵\r\n
+  12. 15 hajar 4 shata 21↵\r\n
 */
