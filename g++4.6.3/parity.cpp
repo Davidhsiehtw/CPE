@@ -23,7 +23,7 @@ int main() {
 		while (I > 0) {
 			B += '0' + (I % 2); // NOTE
 			if (I % 2 == 1) P++;
-			I >>=1; // I = I >> 1; 右移一位，相當於 I 除以 2 的整數除法
+			I >>=1; // I = I >> 1; 右移一位，相當於 I 除以 2 的整數除法 // 10 -> 5 -> 2 -> 1
 		}
 		reverse(B.begin(), B.end());
 		cout << "The parity of " << B << " is " << P << " (mod 2)." << "\n";
