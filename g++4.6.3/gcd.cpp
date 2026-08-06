@@ -22,16 +22,13 @@ int GCD(int x, int y) {
 
 int main() {
 	ios::sync_with_stdio(0);
-	int N, G;
+	int N;
 	while (cin >> N) {
 		if (N == 0) break;
-		G = 0;
-		for (int i=1; i < N; i++) {
-			for (int j = i+1; j <= N; j++) {
-				cout << i << " " << j << endl;
+		int G = 0;
+		for (int i=1; i < N; i++)
+			for (int j = i+1; j <= N; j++)
 				G += GCD(i, j);
-			}
-		}
 		cout << G << endl;
 	}
 }

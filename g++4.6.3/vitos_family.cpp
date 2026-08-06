@@ -1,5 +1,8 @@
 /*中位數解法 and 三分搜尋法：https://hackmd.io/@ShanC/ternary-search#*/
-// g++4.6.3 AC
+// 批改交卷：不通過，但卻顯示 SAME
+// 十組隨機測資 SAME
+// 預設測資 SAME
+// 不寫 ios::sync_with_stdio(0); 會 NO-OUTPUT
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -21,7 +24,7 @@ int main() {
 		for (int i = 0; i < r; i++) {
 			dis += abs(a[i] - mid);
 		}
-		cout << dis << "\n";
+		cout << dis << endl;
 	}
 	return 0;
 }
