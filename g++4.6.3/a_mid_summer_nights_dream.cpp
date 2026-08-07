@@ -13,7 +13,7 @@ int main() {
             cin >> a[i];
         }
 		sort(a, a+n);
-		int mid1 = a[(n-1)/2];
+		int mid1 = a[(n-1)/2]; 
 		int mid2 = a[n/2];
 		int ans = 0;
 		for (int i = 0; i < n; i++) {
